@@ -7,8 +7,8 @@ import { SurveyComponent }		from './survey.component';
 
 const appRoutes: Routes = [
 	{ path: '', redirectTo: "/subscribe", pathMatch: 'full' },
-  	{ path: '/survey-frontend/subscribe', component: SubscribeComponent },
-  	{ path: '/survey-frontend/survey', component: SurveyComponent }	
+  	{ path: 'subscribe', component: SubscribeComponent },
+  	{ path: 'survey', component: SurveyComponent }	
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, {useHash: true});
