@@ -36,45 +36,4 @@ jQuery(document).ready(function() {
         Wow
     */
     new WOW().init();
-    
-    /*
-	    Subscription form
-	*/	
-	$('.subscribe form').submit(function(e) {
-		e.preventDefault();
-	    var postdata = $(this).serialize();
-	    $.ajax({
-	        type: 'POST',
-	        url: 'assets/subscribe.php',
-	        data: postdata,
-	        dataType: 'json',
-	        success: function(json) {
-	            if(json.valid == 0) {
-	                $('.success-message, .error-message').hide();
-	                $('.error-message').html(json.message).fadeIn('fast', function(){
-	                	$('.subscribe form').addClass('animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-	            			$(this).removeClass('animated shake');
-	            		});
-	                });
-	            }
-	            else {
-	            	$('.success-message, .error-message, .subscribe form').hide();
-	                $('.success-message').html(json.message).fadeIn('fast', function(){
-	                	$('.top-content').backstretch("resize");
-	                });
-	            }
-	        }
-	    });
-	});
-	
-});
-
-
-jQuery(window).load(function() {
-	
-	/*
-		Hidden images
-	*/
-	$(".testimonial-image img").attr("style", "width: auto !important; height: auto !important;");
-	
 });
