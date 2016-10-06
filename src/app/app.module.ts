@@ -1,20 +1,37 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { NgModule }                                 from '@angular/core';
+import { BrowserModule }                            from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule }         from '@angular/forms';
+import { HttpModule }                               from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { AppComponent }                             from './app.component';
+import { SubscribeComponent }                       from './subscribe.component';
+import { SurveyComponent }                          from './survey.component';
+import { LeadService }                              from './lead.service';
+import { SurveyService }                            from './survey.service';
+
+import { routing }                                  from './app.routing';
+
 
 @NgModule({
-  declarations: [
-    AppComponent
+  imports: [ 
+  	BrowserModule,
+  	FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    routing
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
+  declarations: [ 
+    AppComponent,
+    SubscribeComponent,
+    SurveyComponent  	
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    LeadService,
+    SurveyService
+  ],
+  bootstrap: [ 
+  	AppComponent
+  ]
 })
+
 export class AppModule { }
