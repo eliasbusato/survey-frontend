@@ -28,11 +28,13 @@ export class SurveyComponent implements OnInit, AfterViewChecked {
 		@Inject(SurveyService) private surveyService: SurveyService,
 		private formBuilder: FormBuilder, 
 		private router: Router) {
+
+        this.leadId = this.router.routerState.snapshot.root.queryParams["lead"];
+        console.log(this.leadId);
 	}
 
 	ngOnInit(): void {
-
-        //this.leadId = this.router.routerState.snapshot.root.queryParams.lead;
+        
         this.lead = {                  
             leadSurveys : []
         };
