@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Rx';
 
 export class LeadService {
 
-	restURL = 'http://survey-rest.herokuapp.com/leads/';
+	restURL = '//survey-rest.herokuapp.com/leads/';
 
 	constructor(@Inject(Http) private http:Http) {
 		this.http = http;

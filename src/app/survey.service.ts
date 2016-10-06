@@ -5,7 +5,7 @@ import { Survey } from './survey.interface';
 
 export class SurveyService {
 
-	restURL = 'http://survey-rest.herokuapp.com/surveys/';
+	restURL = '//survey-rest.herokuapp.com/surveys/';
 
 	constructor(@Inject(Http) private http:Http) {
 		this.http = http;
